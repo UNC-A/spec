@@ -9,4 +9,4 @@ this document covers all server -> client entries
 ### Actions
 this document covers all client -> server entries
 
-While both may look similar as many actions are symmetrical they are different*
+While both documents may look similar as many actions are symmetrical, they are not the same.
