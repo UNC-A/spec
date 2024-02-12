@@ -2,6 +2,14 @@ UNCA OPEN SPEC DOCUMENT
 
 
 ## Client -> Server
+this triggers the WS server to send data for each collection
+### Manual Establish
+```json
+{
+  "action": "ManualEstablish",
+}
+```
+
 ### Message; Create
 ```json
 {
