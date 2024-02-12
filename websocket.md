@@ -22,30 +22,12 @@ If you've read a OPENSPEC document before you can skip this part.
   
 }
 ```
-response
-```json
-{
-  "id": "{message_id}",
-  "content": "String",
-  //nullable
-  "reply": "{message_id}"
-}
-```
 ### Message; Get
 ```json
 {
   "action": "MessageGet",
   "channel": "{channel_id}",
   "message": "{message_id}"
-}
-```
-response
-```json
-{
-  "id": "{message_id}",
-  "content": "String",
-  //nullable
-  "reply": "{message_id}"
 }
 ```
 ### Message; Get Many
@@ -55,15 +37,6 @@ response
   "channel": "{channel_id}",
 }
 
-```
-response
-```json
-[{
-  "id": "{message_id}",
-  "content": "String",
-  //nullable
-  "reply": "{message_id}"
-}]
 ```
 ### Message; Edit
 note: if all fields are null the request will be ignored
@@ -78,15 +51,7 @@ note: if all fields are null the request will be ignored
   
 }
 ```
-response
-```json
-{
-  "id": "{message_id}",
-  "content": "String",
-  //nullable
-  "reply": "{message_id}"
-}
-```
+
 ### Message; Delete
 ```json
 {
@@ -123,15 +88,7 @@ note: this acts as sending a friend request OR accepting one
   "user_name": "{Username}"
 }
 ```
-response
-```json
-{
-  "id": "{message_id}",
-  "content": "String",
-  //nullable
-  "reply": "{message_id}"
-}
-```
+
 ### Friend; Get All
 note: this acts as sending a friend request OR accepting one
 ```json
@@ -139,15 +96,7 @@ note: this acts as sending a friend request OR accepting one
   "action": "FriendGetAll",
 }
 ```
-response
-```json
-[{
-  "_id": "{user_id}",
-  "username": "String",
-  "display": {...},
-  "descrption": "String"
-}]
-```
+
 
 ### Friend; Remove
 note: this acts as removing a friend OR rejecting a friend request
@@ -160,15 +109,7 @@ note: this acts as removing a friend OR rejecting a friend request
   "user_name": "{Username}"
 }
 ```
-response
-```json
-[{
-  "_id": "{user_id}",
-  "username": "String",
-  "display": {...},
-  "descrption": "String"
-}]
-```
+
 
 ### Block; Add
 note: this will automatically de-friend this user
@@ -184,31 +125,12 @@ note: this will automatically de-friend this user
   "action": "BlockGetAll",
 }
 ```
-response
-```json
-[{
-  "_id": "{user_id}",
-  "username": "String",
-  "display": {...},
-  "descrption": "String",
-  "open": bool
-}]
-```
+
 ### Block; Remove
 ```json
 {
   "action": "BlockRemove",
   "user": "{user_id}",
-}
-```
-response
-```json
-{
-  "_id": "{user_id}",
-  "username": "String",
-  "display": {...},
-  "descrption": "String",
-  "open": bool
 }
 ```
 ### Channel; Create
@@ -218,15 +140,7 @@ response
   "user": "{user_id}",
 }
 ```
-response
-```json
-{
-  "_id": "{channel_id}",
-  // always false | cannot create self channel
-  "self": bool,
-  "members": ["user_id"]
-}
-```
+
 ### Channel; Remove
 ```json
 {
