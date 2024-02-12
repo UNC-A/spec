@@ -222,7 +222,7 @@ response
 ```json
 {
   "_id": "{channel_id}",
-  // always false | cannot creat self channel
+  // always false | cannot create self channel
   "self": bool,
   "members": ["user_id"]
 }
