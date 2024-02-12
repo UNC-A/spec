@@ -17,10 +17,7 @@ Establish can be manually triggered if the user believes that their current info
 ```json
 {
   "action": "MessageSend",
-  "channel": "{channel_id}",
-  "content": "String",
-  // nullable 
-  "reply": "{message_id}",
+  "message": {...}
   
 }
 ```
@@ -29,11 +26,8 @@ note: if all fields are null the request will be ignored
 ```json
 {
   "action": "MessageEdit",
-  "message": "{message_id}",
-  // nullable 
-  "content": "String",
-  // nullable 
-  "reply": "{message_id}",
+  "message_fields": {...},
+  "message_remove": {...},
   
 }
 ```
