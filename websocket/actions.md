@@ -22,22 +22,6 @@ If you've read a OPENSPEC document before you can skip this part.
   
 }
 ```
-### Message; Get
-```json
-{
-  "action": "MessageGet",
-  "channel": "{channel_id}",
-  "message": "{message_id}"
-}
-```
-### Message; Get Many
-```json
-{
-  "action": "MessageGetMany",
-  "channel": "{channel_id}",
-}
-
-```
 ### Message; Edit
 note: if all fields are null the request will be ignored
 ```json
@@ -51,7 +35,6 @@ note: if all fields are null the request will be ignored
   
 }
 ```
-
 ### Message; Delete
 ```json
 {
@@ -89,13 +72,6 @@ note: this acts as sending a friend request OR accepting one
 }
 ```
 
-### Friend; Get All
-note: this acts as sending a friend request OR accepting one
-```json
-{
-  "action": "FriendGetAll",
-}
-```
 
 
 ### Friend; Remove
@@ -117,12 +93,6 @@ note: this will automatically de-friend this user
 {
   "action": "BlockAdd",
   "user": "{user_id}",
-}
-```
-### Block; Get All
-```json
-{
-  "action": "BlockGetAll",
 }
 ```
 
