@@ -129,3 +129,12 @@ note: this will automatically de-friend this user
   "channel": "{channel_id}",
 }
 ```
+
+this triggers the WS server to send data for each collection
+### Manual Establish
+```json
+{
+  "action": "ManualEstablish",
+ 
+}
+```
