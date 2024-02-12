@@ -9,7 +9,6 @@ If you've read a OPENSPEC document before you can skip this part.
 - If an item in the JSON has the nullable* comment it means that at least ONE of the nullable* fields MUST be present.
 - Guidelines recommend abiding by CRUD order and wording
 
-CRUD
 
 ## Client -> Server
 ### Message; Create
@@ -23,6 +22,15 @@ CRUD
   
 }
 ```
+response
+```json
+{
+  "id": "{message_id}",
+  "content": "String",
+  //nullable
+  "reply": "{message_id}"
+}
+```
 ### Message; Get
 ```json
 {
@@ -31,12 +39,31 @@ CRUD
   "message": "{message_id}"
 }
 ```
+response
+```json
+{
+  "id": "{message_id}",
+  "content": "String",
+  //nullable
+  "reply": "{message_id}"
+}
+```
 ### Message; Get Many
 ```json
 {
   "action": "MessageGetMany",
   "channel": "{channel_id}",
 }
+
+```
+response
+```json
+[{
+  "id": "{message_id}",
+  "content": "String",
+  //nullable
+  "reply": "{message_id}"
+}]
 ```
 ### Message; Edit
 note: if all fields are null the request will be ignored
@@ -49,6 +76,15 @@ note: if all fields are null the request will be ignored
   // nullable 
   "reply": "{message_id}",
   
+}
+```
+response
+```json
+{
+  "id": "{message_id}",
+  "content": "String",
+  //nullable
+  "reply": "{message_id}"
 }
 ```
 ### Message; Delete
@@ -71,7 +107,6 @@ note: if typing == true in more than one channels; the oldest will be removed
 ```json
 {
   "action": "Ping",
-  "ping": bool,
   // nullable 
   "data": 0.0
 }
@@ -88,12 +123,30 @@ note: this acts as sending a friend request OR accepting one
   "user_name": "{Username}"
 }
 ```
+response
+```json
+{
+  "id": "{message_id}",
+  "content": "String",
+  //nullable
+  "reply": "{message_id}"
+}
+```
 ### Friend; Get All
 note: this acts as sending a friend request OR accepting one
 ```json
 {
   "action": "FriendGetAll",
 }
+```
+response
+```json
+[{
+  "_id": "{user_id}",
+  "username": "String",
+  "display": {...},
+  "descrption": "String"
+}]
 ```
 
 ### Friend; Remove
@@ -107,6 +160,15 @@ note: this acts as removing a friend OR rejecting a friend request
   "user_name": "{Username}"
 }
 ```
+response
+```json
+[{
+  "_id": "{user_id}",
+  "username": "String",
+  "display": {...},
+  "descrption": "String"
+}]
+```
 
 ### Block; Add
 note: this will automatically de-friend this user
@@ -115,13 +177,22 @@ note: this will automatically de-friend this user
   "action": "BlockAdd",
   "user": "{user_id}",
 }
-
 ```
 ### Block; Get All
 ```json
 {
   "action": "BlockGetAll",
 }
+```
+response
+```json
+[{
+  "_id": "{user_id}",
+  "username": "String",
+  "display": {...},
+  "descrption": "String",
+  "open": bool
+}]
 ```
 ### Block; Remove
 ```json
@@ -130,4 +201,36 @@ note: this will automatically de-friend this user
   "user": "{user_id}",
 }
 ```
-
+response
+```json
+{
+  "_id": "{user_id}",
+  "username": "String",
+  "display": {...},
+  "descrption": "String",
+  "open": bool
+}
+```
+### Channel; Create
+```json
+{
+  "action": "ChannelCreate",
+  "user": "{user_id}",
+}
+```
+response
+```json
+{
+  "_id": "{channel_id}",
+  // always false | cannot creat self channel
+  "self": bool,
+  "members": ["user_id"]
+}
+```
+### Channel; Remove
+```json
+{
+  "action": "ChannelRemove",
+  "channel": "{channel_id}",
+}
+```
