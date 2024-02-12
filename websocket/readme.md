@@ -6,7 +6,7 @@ UNCA runs entirely from websocket for communication, this comes with a few limit
 
 ### Events
 this document covers all server -> client entries
-## Actions
+### Actions
 this document covers all client -> server entries
 
 While both may look similar as many actions are symmetrical they are different*
