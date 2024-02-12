@@ -51,10 +51,11 @@ note: if typing == true in more than one channels; the oldest will be removed
 {
   "action": "TypeStatus",
   "typing": bool,
-  "channel": "{channel_id}"
+  "channel": "{channel_id}",
+  "user": "{user_id}"
 }
 ```
-### Ping
+### Pong
 ```json
 {
   "action": "Ping",
@@ -86,8 +87,6 @@ note: this acts as removing a friend OR rejecting a friend request
   "user_name": "{Username}"
 }
 ```
-
-
 ### Block; Add
 note: this will automatically de-friend this user
 ```json
@@ -108,7 +107,7 @@ note: this will automatically de-friend this user
 ```json
 {
   "action": "ChannelCreate",
-  "user": "{user_id}",
+  "channel": {...}
 }
 ```
 
@@ -116,6 +115,6 @@ note: this will automatically de-friend this user
 ```json
 {
   "action": "ChannelRemove",
-  "channel": "{channel_id}",
+  "user": "{user_id}",
 }
 ```

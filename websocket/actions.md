@@ -14,11 +14,7 @@ this triggers the WS server to send data for each collection
 ```json
 {
   "action": "MessageSend",
-  "channel": "{channel_id}",
-  "content": "String",
-  // nullable 
-  "reply": "{message_id}",
-  
+  "message": {...}
 }
 ```
 ### Message; Edit
@@ -26,11 +22,8 @@ note: if all fields are null the request will be ignored
 ```json
 {
   "action": "MessageEdit",
-  "message": "{message_id}",
-  // nullable 
-  "content": "String",
-  // nullable 
-  "reply": "{message_id}",
+  "message_fields": {...},
+  "message_remove": {...},
   
 }
 ```
@@ -114,6 +107,6 @@ note: this will automatically de-friend this user
 ```json
 {
   "action": "ChannelRemove",
-  "channel": "{channel_id}",
+  "user": "{user_id}",
 }
 ```
