@@ -1,6 +1,26 @@
 UNCA OPEN SPEC DOCUMENT
 
 ## Server -> Client
+
+
+### Establish
+Sent ONCE on websocket startup
+```json
+{
+  "users": [
+    {
+      "_id": "{user_id}",
+      "username": "String"
+    }
+  ],
+  "channels": [
+    {
+      "_id": "{channel_id}",
+      "members": ["{user_id}"]
+    }
+  ]
+}
+```
 ### Message; Send
 ```json
 {
