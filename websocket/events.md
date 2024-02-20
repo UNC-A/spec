@@ -18,7 +18,8 @@ Sent ONCE on websocket startup
       "_id": "{channel_id}",
       "members": ["{user_id}"]
     }
-  ]
+  ],
+"version": "0.1.1"
 }
 ```
 ### Message; Send
