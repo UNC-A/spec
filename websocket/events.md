@@ -30,6 +30,7 @@ Sent ONCE on websocket startup
   "author": "{user_id}",
   "content": "String",
   "reply"?: "{message_id}",
+  "created": "Timestamp"
   "channel": "{channel_id}",
 }
 ```
