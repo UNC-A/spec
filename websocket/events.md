@@ -12,14 +12,15 @@ Sent ONCE on websocket startup
       "_id": "{user_id}",
       "username": "String"
     }
-  ],
+  ], 
   "channels": [
     {
       "_id": "{channel_id}",
       "members": ["{user_id}"]
     }
   ],
-"version": "0.1.1"
+  "you": "{user_id}",
+  "version": "0.1.1"
 }
 ```
 ### Message; Send
