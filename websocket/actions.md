@@ -8,7 +8,6 @@ UNCA OPEN SPEC DOCUMENT
 {
   "action": "MessageSend",
   "content": "String",
-  "reply"?: "{message_id}",
   "channel": "{channel_id}",
 }
 ```
