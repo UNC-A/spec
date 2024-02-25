@@ -19,6 +19,14 @@ Sent ONCE on websocket startup
       "members": ["{user_id}"]
     }
   ],
+  "messaeges": [
+    {
+      "_id": "{message_id}",
+      "author": "{user_id}",
+      "content": "String",
+      "channel": "{channel_id}"
+    }
+  ],
   "you": "{user_id}",
   "version": "0.1.1"
 }
