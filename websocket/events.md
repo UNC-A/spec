@@ -19,7 +19,7 @@ Sent ONCE on websocket startup
       "members": ["{user_id}"]
     }
   ],
-  "messaeges": [
+  "messages": [
     {
       "_id": "{message_id}",
       "author": "{user_id}",
