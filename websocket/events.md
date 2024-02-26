@@ -48,7 +48,7 @@ note: if typing == true in more than one channels; the oldest will be removed
   "action": "TypeStatus",
   "typing"?: true,
   "channel": "{channel_id}",
-  "user": "{user_id}"
+  "author": "{user_id}"
 }
 ```
 ### Pong
